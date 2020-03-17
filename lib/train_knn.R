@@ -1,25 +1,11 @@
-###########################################################
-### Train a classification model with training features ###
-###########################################################
 train <- function(feature_df = pairwise_data, par = NULL){
-  ### Train a classfication model using processed features from training images
-  
-  ### Input:
-  ### - a data frame containing features and labels
-  ### - a parameter list
-  ### Output: trained model
-  
+  k = par$k
 
-  
-  ### Train with knn
-  if(is.null(par)){
-    k = 5
-  } else {
-    k = par$k
-  }
-  
-  # model <- 
-  
-  return(model)
+
+model <- knn(train = dat_train[,-which(names(dat_train) == 'emotion_idx')], 
+             test = dat_test[,-which(names(dat_test) == 'emotion_idx')], 
+             cl = dat_train$emotion_idx, 
+             k = K)
+
+return(model)
 }
-
