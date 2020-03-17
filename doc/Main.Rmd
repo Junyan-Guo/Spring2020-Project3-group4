@@ -42,12 +42,13 @@ library(dplyr)
 library(EBImage)
 library(ggplot2)
 library(caret)
+library(class)
 ```
 
 ### Step 0 set work directories
 ```{r wkdir, eval=FALSE}
 set.seed(0)
-setwd("~/Project3-FacialEmotionRecognition/doc")
+setwd("~/Documents/GitHub/Spring2020-Project3-group4/doc")
 # here replace it with your own path or manually set it in RStudio to where this rmd file is located. 
 # use relative path for reproducibility
 ```
@@ -81,7 +82,7 @@ run.feature.test=TRUE # process features for test set
 Using cross-validation or independent test set evaluation, we compare the performance of models with different specifications. In this Starter Code, we tune parameter k (number of neighbours) for KNN.
 
 ```{r model_setup}
-k = c(5,11,21,31,41,51)
+k = c(36,37,38,39,40,41,42,43,44)
 model_labels = paste("KNN with K =", k)
 ```
 
@@ -168,7 +169,7 @@ Call the train model and test model from library.
 + In this Starter Code, we use KNN to do classification. 
 
 ```{r loadlib}
-#source("../lib/train.R") Since knn does not need to train, I comment this line.
+source("../lib/train_knn.R") 
 source("../lib/test_knn.R")
 ```
 
@@ -213,9 +214,10 @@ par_best <- list(k = model_best)
 
 * Train the model with the entire training set using the selected model (model parameter) via cross-validation.
 ```{r final_train}
-#tm_train=NA
-#tm_train <- system.time(fit_train <- train(dat_train, par_best))
-#save(fit_train, file="../output/fit_train.RData")
+source("../lib/train_knn.R")
+tm_train=NA
+tm_train <- system.time(fit_train <- train(dat_train, par_best))
+save(fit_train, file="../output/fit_train.RData")
 ```
 
 ### Step 5: Run test on test images
@@ -243,7 +245,7 @@ Prediction performance matters, so does the running times for constructing featu
 ```{r running_time}
 cat("Time for constructing training features=", tm_feature_train[1], "s \n")
 cat("Time for constructing testing features=", tm_feature_test[1], "s \n")
-#cat("Time for training model=", tm_train[1], "s \n")
+cat("Time for training model=", tm_train[1], "s \n")
 cat("Time for testing model=", tm_test[1], "s \n")
 ```
 
