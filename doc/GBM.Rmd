@@ -202,34 +202,33 @@ par_best_gbm <- list(shrink = model_best_gbm)
 ```{r gbm, eval=FALSE}
 source("../lib/train_gbm.R")
 ###Traing
-gbm.fit<-gbm_train(dat_train)
-#Save model
-saveRDS(gbm.fit, "../output/gbm.RDS")
+#gbm.fit<-gbm_train(dat_train)
+#saveRDS(gbm.fit, "../output/gbm.RDS")
 
-#load model
-gbm.fit<-readRDS("../output/gbm.RDS")
 ```
 
 
 ### Step 5: Run test on test images
 ```{r}
 source("../lib/test_gbm.R")
+gbm.fit<-readRDS("../output/gbm.RDS")
 pred_gbm<-gbm_test(gbm.fit[[1]],dat_test)
 ```
 
 Evaluation
 ```{r}
-pred.class<-apply(pred_gbm[[1]],1,which.max)
-confusionMatrix(dat_test$emotion_idx,as.factor(pred.class))
-cat("The accuracy for gbm model is", mean(dat_test$emotion_idx==pred.class)*100, "%.\n")
+pred_class<-apply(pred_gbm[[1]],1,which.max)
+confusionMatrix(dat_test$emotion_idx,as.factor(pred_class))
+acc_gbm<-mean(dat_test$emotion_idx==pred_class)
+cat("The accuracy for gbm model is", acc_gbm*100, "%.\n")
 ```
 
 
 ### Summarize Running Time
 ```{r}
-tm_test_gbm<-system.time(pred_gbm)
+
 cat("Time for constructing training features=", tm_feature_train[1], "s \n")
 cat("Time for constructing testing features=", tm_feature_test[1], "s \n")
 cat("Time for training model=", gbm.fit[[2]][1], "s \n")
-cat("Time for testing model=", tm_test_gbm[1], "s \n")
+cat("Time for testing model=", pred_gbm[[2]][1], "s \n")
 ```
