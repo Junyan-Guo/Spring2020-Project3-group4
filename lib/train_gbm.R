@@ -7,7 +7,7 @@ gbm_train<-function(dat_train){
                                      data=dat_train,
                                      n.trees = 200,
                                      bag.fraction=0.65,
-                                     shrinkage = unlist(par_best_gbm),
+                                     shrinkage = 0.1,
                                      cv.folds=3))
   
   return(list(gbm.fit,tm.train))

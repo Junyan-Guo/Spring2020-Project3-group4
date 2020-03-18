@@ -2,7 +2,7 @@ cv.function.gbm <- function(dat_train,shrink){
   gbm_model <- gbm(formula = emotion_idx ~.,
                    distribution = "multinomial",
                    data = dat_train,
-                   cv.folds = 5,
+                   cv.folds = 3,
                    shrinkage = shrink,
                    n.trees = 200)
   
