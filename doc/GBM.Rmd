@@ -68,7 +68,7 @@ In this chunk, we have a set of controls for the evaluation experiments.
 
 ```{r exp_setup}
 run.cv=TRUE # run cross-validation on the training set
-K <- 3  # number of CV folds
+K <- 5  # number of CV folds
 run.feature.train=TRUE # process features for training set
 run.test=TRUE # run evaluation on an independent test set
 run.feature.test=TRUE # process features for test set
