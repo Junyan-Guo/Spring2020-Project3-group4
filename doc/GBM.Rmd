@@ -1,6 +1,6 @@
 ---
 title: "GBM model"
-author: "Zidi Hong"
+author: "Project3 Group4"
 output: html_notebook
 ---
 
