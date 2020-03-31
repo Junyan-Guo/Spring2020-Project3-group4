@@ -1,6 +1,6 @@
 ---
 title: "GBM model"
-author: "Project3 Group4"
+author: "project3 group4"
 output: html_notebook
 ---
 
@@ -38,7 +38,6 @@ library(EBImage)
 library(ggplot2)
 library(caret)
 library(gbm)
-library(class)
 ```
 
 ### Step 0 set work directories
@@ -50,7 +49,7 @@ setwd("~/Documents/GitHub/Spring2020-Project3-group4/doc")
 
 
 ```{r}
-train_dir <- "../data/train_set/" # This will be modified for different data sets.
+train_dir <- "../data/" # This will be modified for different data sets.
 train_image_dir <- paste(train_dir, "images/", sep="")
 train_pt_dir <- paste(train_dir,  "points/", sep="")
 train_label_path <- paste(train_dir, "label.csv", sep="") 
@@ -102,13 +101,14 @@ Fiducial points are stored in matlab format. In this step, we read them and stor
 #function to read fiducial points
 #input: index
 #output: matrix of fiducial points corresponding to the index
-readMat.matrix <- function(index){
-     return(round(readMat(paste0(train_pt_dir, sprintf("%04d", index), ".mat"))[[1]],0))
-}
+#readMat.matrix <- function(index){
+#     return(round(readMat(paste0(train_pt_dir, sprintf("%04d", index), ".mat"))[[1]],0))
+#}
 
 #load fiducial points
-fiducial_pt_list <- lapply(1:n_files, readMat.matrix)
-save(fiducial_pt_list, file="../output/fiducial_pt_list.RData")
+#fiducial_pt_list <- lapply(1:n_files, readMat.matrix)
+#save(fiducial_pt_list, file="../output/fiducial_pt_list.RData")
+load("../output/fiducial_pt_list.RData")
 ```
 
 ### Step 3: construct features and responses
@@ -163,15 +163,15 @@ model_labels = paste("GBM with Shrink =", shrink)
 
 ### cross-validation to choose shrink parameter
 ```{r}
-source("../lib/tuning_parameter_gbm.R")
-if(run.cv){
-     err_cv_gbm <- matrix(0, nrow = length(shrink), ncol = 2)
-     for(i in 1:length(shrink)){
-         cat("Shrink =", shrink[i], "\n")
-         err_cv_gbm[i,] <- cv.function.gbm(dat_train, shrink[i])
-         #save(err_cv_gbm, file="../output/err_cv_gbm.RData")
-     }
- }
+#source("../lib/tuning_parameter_gbm.R")
+#if(run.cv){
+#     err_cv_gbm <- matrix(0, nrow = length(shrink), ncol = 2)
+#     for(i in 1:length(shrink)){
+#         cat("Shrink =", shrink[i], "\n")
+#         err_cv_gbm[i,] <- cv.function.gbm(dat_train, shrink[i])
+#         save(err_cv_gbm, file="../output/err_cv_gbm.RData")
+#     }
+# }
 ```
 
 Visualize cross-validation results. 
@@ -203,32 +203,34 @@ par_best_gbm <- list(shrink = model_best_gbm)
 source("../lib/train_gbm.R")
 ###Traing
 #gbm.fit<-gbm_train(dat_train)
+#Save model
 #saveRDS(gbm.fit, "../output/gbm.RDS")
+
 #Google Drive link: https://drive.google.com/file/d/16ZQ-hkR1sJURZNX_NIpXcOsRSNsXgwyC/view?usp=sharing
+#load model
+gbm.fit<-readRDS("../output/gbm.RDS")
 ```
 
 
 ### Step 5: Run test on test images
 ```{r}
 source("../lib/test_gbm.R")
-gbm.fit<-readRDS("../output/gbm.RDS")
 pred_gbm<-gbm_test(gbm.fit[[1]],dat_test)
 ```
 
 Evaluation
 ```{r}
-pred_class<-apply(pred_gbm[[1]],1,which.max)
-confusionMatrix(dat_test$emotion_idx,as.factor(pred_class))
-acc_gbm<-mean(dat_test$emotion_idx==pred_class)
-cat("The accuracy for gbm model is", acc_gbm*100, "%.\n")
+pred.class<-apply(pred_gbm[[1]],1,which.max)
+confusionMatrix(dat_test$emotion_idx,as.factor(pred.class))
+cat("The accuracy for gbm model is", mean(dat_test$emotion_idx==pred.class)*100, "%.\n")
 ```
 
 
 ### Summarize Running Time
 ```{r}
-
+tm_test_gbm<-system.time(pred_gbm)
 cat("Time for constructing training features=", tm_feature_train[1], "s \n")
 cat("Time for constructing testing features=", tm_feature_test[1], "s \n")
 cat("Time for training model=", gbm.fit[[2]][1], "s \n")
-cat("Time for testing model=", pred_gbm[[2]][1], "s \n")
+cat("Time for testing model=", tm_test_gbm[1], "s \n")
 ```
