@@ -6,17 +6,43 @@
 
 Term: Spring 2020
 
-+ Team ##
++ Team 04
 + Team members
-	+ team member 1
-	+ team member 2
-	+ team member 3
-	+ team member 4
-	+ team member 5
+	1. Chen, Shuyi 
+        2. Flack, Jasmin 
+        3. Hong, Zidi 
+        4. Zhang, Ruo zhou 
+        5. Zhang, Xinlin 
 
-+ Project summary: In this project, we created a classification engine for facial emotion recognition. 
++ Project summary: In this project, we created a classification engine for facial emotion recognition. The baseline model uses gradient boosting machine (gbm) with accuracy of ... . We have also evaluated other machine learning models(XGboost, Bagging-log,bagging-SVM) and chose the best one (bagging-SVM) based on predictive performance and computation efficiency. Our final advanced model uses bagging-SVM with PCA which enhances the accuracy rate by 52.56%.
+
+Model performance:            
+                      
+GBM
+XGBOOST : The improved model Accuracy: 50.2% and time used on training the model is 483.013s.
+Bagging-SVM
+Bagging-Log
+
+
+
+Note:
+Our advanced models are embedded in a ipynb.file which could use google colab to open. 
+
+Steps:
+
+1. Go to this link: https://colab.research.google.com/notebooks/intro.ipynb
+2. From the tabs at the top of the file explorer, select a source and navigate to the . ipynb file you wish to open. 
+
+
 	
-**Contribution statement**: ([default](doc/a_note_on_contributions.md)) All team members contributed equally in all stages of this project. All team members approve our work presented in this GitHub repository including this contributions statement. 
+**Contribution statement**: ([default](doc/a_note_on_contributions.md)) 
+
+All team members contributed equally in all stages of this project. All team members approve our work presented in this GitHub repository including this contributions statement. 
+
+Shuyi Chen built and trained the Xgboost model collaborated with Xinlin Zhang. The entire process is developed in Python including data preposessing, train/test split, feature extraction(calculation of pairwise euclidean distances), hyperparameter tuning using gridsearch and model assessment.
+
+
+
 
 Following [suggestions](http://nicercode.github.io/blog/2013-04-05-projects/) by [RICH FITZJOHN](http://nicercode.github.io/about/#Team) (@richfitz). This folder is orgarnized as follows.
 
