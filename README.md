@@ -7,15 +7,16 @@
 Term: Spring 2020
 
 + Team 04
-+ Team members
++ Team members:
 	
-	+ Chen, Shuyi 
+	 
         + Flack, Jasmin 
         + Hong, Zidi 
         + Zhang, Ruo zhou 
         + Zhang, Xinlin 
+	+ Chen, Shuyi
 
-+ Project summary: In this project, we created a classification engine for facial emotion recognition. The baseline model uses gradient boosting machine (gbm) with accuracy of ... . We have also evaluated other machine learning models(XGboost, Bagging-log,bagging-SVM) and chose the best one (bagging-SVM) based on predictive performance and computation efficiency. Our final advanced model uses bagging-SVM with PCA which enhances the accuracy rate by 52.56%.
++ Project summary: In this project, we created a classification engine for facial emotion recognition. The baseline model uses gradient boosting machine (gbm) with the accuracy of ... . We have also evaluated other machine learning models(XGboost, Bagging-log,bagging-SVM) and chose the best one (bagging-SVM) based on predictive performance and computation efficiency. Our final advanced model uses bagging-SVM with PCA which enhances the accuracy rate by 52.56%.
 
 Model performance:            
                       
@@ -40,7 +41,7 @@ Steps:
 
 All team members contributed equally in all stages of this project. All team members approve our work presented in this GitHub repository including this contributions statement. 
 
-Shuyi Chen built and trained the Xgboost model collaborated with Xinlin Zhang. The entire process is developed in Python including data preposessing, train/test split, feature extraction(calculation of pairwise euclidean distances), hyperparameter tuning using gridsearch and model assessment.
+Shuyi Chen built and trained the Xgboost model collaborated with Xinlin Zhang. The entire process is developed in Python including data prepossessing, train/test split, feature extraction(calculation of pairwise euclidean distances), hyperparameter tuning using gridsearch and model assessment.
 
 
 
