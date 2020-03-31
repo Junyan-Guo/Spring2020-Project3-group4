@@ -9,11 +9,11 @@ Term: Spring 2020
 + Team 04
 + Team members
 	
-	- Chen, Shuyi 
-        - Flack, Jasmin 
-        - Hong, Zidi 
-        - Zhang, Ruo zhou 
-        - Zhang, Xinlin 
+	+ Chen, Shuyi 
+        + Flack, Jasmin 
+        + Hong, Zidi 
+        + Zhang, Ruo zhou 
+        + Zhang, Xinlin 
 
 + Project summary: In this project, we created a classification engine for facial emotion recognition. The baseline model uses gradient boosting machine (gbm) with accuracy of ... . We have also evaluated other machine learning models(XGboost, Bagging-log,bagging-SVM) and chose the best one (bagging-SVM) based on predictive performance and computation efficiency. Our final advanced model uses bagging-SVM with PCA which enhances the accuracy rate by 52.56%.
 
