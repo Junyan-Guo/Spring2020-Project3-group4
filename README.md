@@ -17,7 +17,7 @@ Term: Spring 2020
 
 + Project summary: In this project, we created a classification engine for facial emotion recognition. The baseline model uses gradient boosting machine (gbm) with the accuracy of ... . We have also evaluated other machine learning models(XGboost, Bagging-log,bagging-SVM) and chose the best one (bagging-SVM) based on predictive performance and computation efficiency. Our final advanced model uses bagging-SVM with PCA which enhances the accuracy rate by 52.56%.
 
-Model performance:            
++ Model performance:            
                       
 GBM
 XGBOOST : The improved model Accuracy: 50.2% and time used on training the model is 483.013s.
