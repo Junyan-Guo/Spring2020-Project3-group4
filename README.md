@@ -21,7 +21,7 @@ Term: Spring 2020
                       
 GBM: The baseline model accuracy: 42.4% and time used on training the model is 805.146s.  
 XGBOOST : The improved model Accuracy: 50.2% and time used on training the model is 483.013s.  
-Bagging-SVM : The final advanced model with Accuracy : 52.25% and time used on training is about 110s.
+Bagging-SVM : The final advanced model with Accuracy : 52.25% and time used on training is about 110s.  
 Bagging-Log : The improved model with Accuracy : 53.67%(Not stable) and time used on training(without five session) is 140s.
 
 
@@ -40,7 +40,7 @@ Steps:
 
 All team members contributed equally in all stages of this project. All team members approve our work presented in this GitHub repository including this contributions statement. 
 
-Shuyi Chen built and trained the Xgboost model collaborated with Xinlin Zhang. The entire process is developed in Python including data prepossessing, train/test split, feature extraction(calculation of pairwise euclidean distances), hyperparameter tuning using gridsearch and model assessment. Zidi Hong was in charge of GBM model presented in a R Markdown file which contains data processing, train/test split, feature extraction, cross-validation to choose shrinkage parameter and model assessment. Ruo zhou Zhang built and trained the Bagging-SVM model(Our advanced Model) as well as the Bagging-Logistic Model, including data prepossesing/feature extraction, hyperparameter tunning, train/test split and test. He also  wrap up the models in a certain function which can be simply called by the user.
+Shuyi Chen built and trained the Xgboost model collaborated with Xinlin Zhang. The entire process is developed in Python including data prepossessing, train/test split, feature extraction(calculation of pairwise euclidean distances), hyperparameter tuning using gridsearch and model assessment. Zidi Hong was in charge of GBM model presented in a R Markdown file which contains data processing, train/test split, feature extraction, hyperparameter tunning and model assessment. Ruo zhou Zhang built and trained the Bagging-SVM model(Our advanced Model) as well as the Bagging-Logistic Model, including data prepossesing/feature extraction, hyperparameter tunning, train/test split and test. He also  wrap up the models in a certain function which can be simply called by the user.
 
 
 
