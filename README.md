@@ -40,10 +40,10 @@ Steps:
 
 All team members contributed equally in all stages of this project. All team members approve our work presented in this GitHub repository including this contributions statement. 
 
-Shuyi Chen built and trained the Xgboost model collaborated with Xinlin Zhang. The entire process is developed in Python including data prepossessing, train/test split, feature extraction(calculation of pairwise euclidean distances), hyperparameter tuning using gridsearch and model assessment. 
-Zidi Hong was in charge of GBM model presented in a R Markdown file which contains data processing, train/test split, feature extraction, hyperparameter tunning and model assessment. 
-Ruo zhou Zhang built and trained the Bagging-SVM model(Our advanced Model) as well as the Bagging-Logistic Model, including data prepossesing/feature extraction, hyperparameter tunning, train/test split and test. He also  wrap up the models in a certain function which can be simply called by the user. 
-Xinlin Zhang built and trained the Xgboost model collaborated with Shuyi Chen. The entire process is developed in Python including data prepossessing, train/test split, feature extraction(calculation of pairwise euclidean distances), hyperparameter tuning using gridsearch and model assessment. 
++ Shuyi Chen built and trained the Xgboost model collaborated with Xinlin Zhang. The entire process is developed in Python including data prepossessing, train/test split, feature extraction(calculation of pairwise euclidean distances), hyperparameter tuning using gridsearch and model assessment. 
++ Zidi Hong was in charge of GBM model presented in a R Markdown file which contains data processing, train/test split, feature extraction, hyperparameter tunning and model assessment. 
++ Ruo zhou Zhang built and trained the Bagging-SVM model(Our advanced Model) as well as the Bagging-Logistic Model, including data prepossesing/feature extraction, hyperparameter tunning, train/test split and test. He also  wrap up the models in a certain function which can be simply called by the user. 
++ Xinlin Zhang built and trained the Xgboost model collaborated with Shuyi Chen. The entire process is developed in Python including data prepossessing, train/test split, feature extraction(calculation of pairwise euclidean distances), hyperparameter tuning using gridsearch and model assessment. 
 
 
 
