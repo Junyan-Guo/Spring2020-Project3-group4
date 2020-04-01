@@ -19,9 +19,9 @@ Term: Spring 2020
 
 + Model performance:            
                       
-GBM: The baseline model accuracy: 42.4% and time used on training the model is 805.146s.
-XGBOOST : The improved model Accuracy: 50.2% and time used on training the model is 483.013s.
-Bagging-SVM
+GBM: The baseline model accuracy: 42.4% and time used on training the model is 805.146s.  
+XGBOOST : The improved model Accuracy: 50.2% and time used on training the model is 483.013s.  
+Bagging-SVM  
 Bagging-Log
 
 
