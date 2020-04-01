@@ -31,6 +31,10 @@ if(!require("caret")){
   install.packages("caret")
 }
 
+if(!require("gbm")){
+  install.packages("gbm")
+}
+
 library(R.matlab)
 library(readxl)
 library(dplyr)
