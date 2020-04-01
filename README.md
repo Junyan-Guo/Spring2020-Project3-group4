@@ -27,10 +27,10 @@ Bagging-Log
 
 
 Note:
-Our advanced models are embedded in a ipynb.file which could use google colab to open. 
+Our baseline model is more than 100M, so we presented in google drive and our advanced models are embedded in a ipynb.file which could use google colab to open. 
 
 Steps:
-1. Baseline model: https://drive.google.com/file/d/16ZQ-hkR1sJURZNX_NIpXcOsRSNsXgwyC/view?usp=sharing (It is more than 100M so we presented in google drive.)
+1. Baseline model: https://drive.google.com/file/d/16ZQ-hkR1sJURZNX_NIpXcOsRSNsXgwyC/view?usp=sharing  
 2. Go to this link: https://colab.research.google.com/notebooks/intro.ipynb
 3. From the tabs at the top of the file explorer, select a source and navigate to the . ipynb file you wish to open. 
 
