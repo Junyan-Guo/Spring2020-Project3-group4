@@ -15,11 +15,11 @@ Term: Spring 2020
 4. Zhang, Ruo zhou 
 5. Zhang, Xinlin 
 
-+ Project summary: In this project, we created a classification engine for facial emotion recognition. The baseline model uses gradient boosting machine (gbm) with the accuracy of ... . We have also evaluated other machine learning models(XGboost, Bagging-log,bagging-SVM) and chose the best one (bagging-SVM) based on predictive performance and computation efficiency. Our final advanced model uses bagging-SVM with PCA which enhances the accuracy rate by 52.56%.
++ Project summary: In this project, we created a classification engine for facial emotion recognition. The baseline model uses gradient boosting machine (gbm) with the accuracy of 42.4%. We have also evaluated other machine learning models(XGboost, Bagging-log,bagging-SVM) and chose the best one (bagging-SVM) based on predictive performance and computation efficiency. Our final advanced model uses bagging-SVM with PCA which enhances the accuracy rate by 52.56%.
 
 + Model performance:            
                       
-GBM
+GBM: The baseline model accuracy: 42.4% and time used on training the model is 805.146s.
 XGBOOST : The improved model Accuracy: 50.2% and time used on training the model is 483.013s.
 Bagging-SVM
 Bagging-Log
@@ -30,9 +30,9 @@ Note:
 Our advanced models are embedded in a ipynb.file which could use google colab to open. 
 
 Steps:
-
-1. Go to this link: https://colab.research.google.com/notebooks/intro.ipynb
-2. From the tabs at the top of the file explorer, select a source and navigate to the . ipynb file you wish to open. 
+1. Baseline model: https://drive.google.com/file/d/16ZQ-hkR1sJURZNX_NIpXcOsRSNsXgwyC/view?usp=sharing (It is more than 100M so we presented in google drive.)
+2. Go to this link: https://colab.research.google.com/notebooks/intro.ipynb
+3. From the tabs at the top of the file explorer, select a source and navigate to the . ipynb file you wish to open. 
 
 
 	
@@ -40,8 +40,7 @@ Steps:
 
 All team members contributed equally in all stages of this project. All team members approve our work presented in this GitHub repository including this contributions statement. 
 
-Shuyi Chen built and trained the Xgboost model collaborated with Xinlin Zhang. The entire process is developed in Python including data prepossessing, train/test split, feature extraction(calculation of pairwise euclidean distances), hyperparameter tuning using gridsearch and model assessment.
-
+Shuyi Chen built and trained the Xgboost model collaborated with Xinlin Zhang. The entire process is developed in Python including data prepossessing, train/test split, feature extraction(calculation of pairwise euclidean distances), hyperparameter tuning using gridsearch and model assessment. Zidi Hong was in charge of GBM model presented in a R Markdown file which contains data processing, train/test split, feature extraction, cross-validation to choose shrinkage parameter and model assessment. 
 
 
 
