@@ -27,7 +27,7 @@ Bagging-Log : The improved model with Accuracy : 53.67%(Not stable) and time use
 
 
 Note:
-Our baseline model is more than 100M, so we presented in google drive and our advanced models are embedded in a ipynb.file which could use google colab to open. 
+Our baseline model is more than 100M, so we presented in google drive and our advanced models are embedded in a ipynb.file(https://github.com/TZstatsADS/Spring2020-Project3-group4/blob/master/doc/Advanced%20Model%20and%20Other%20Models_colab.ipynb) which could use google colab to open. 
 
 Steps:
 1. Baseline model: https://drive.google.com/file/d/16ZQ-hkR1sJURZNX_NIpXcOsRSNsXgwyC/view?usp=sharing  
@@ -40,7 +40,10 @@ Steps:
 
 All team members contributed equally in all stages of this project. All team members approve our work presented in this GitHub repository including this contributions statement. 
 
-Shuyi Chen built and trained the Xgboost model collaborated with Xinlin Zhang. The entire process is developed in Python including data prepossessing, train/test split, feature extraction(calculation of pairwise euclidean distances), hyperparameter tuning using gridsearch and model assessment. Zidi Hong was in charge of GBM model presented in a R Markdown file which contains data processing, train/test split, feature extraction, hyperparameter tunning and model assessment. Ruo zhou Zhang built and trained the Bagging-SVM model(Our advanced Model) as well as the Bagging-Logistic Model, including data prepossesing/feature extraction, hyperparameter tunning, train/test split and test. He also  wrap up the models in a certain function which can be simply called by the user. Xinlin Zhang built and trained the Xgboost model collaborated with Shuyi Chen. The entire process is developed in Python including data prepossessing, train/test split, feature extraction(calculation of pairwise euclidean distances), hyperparameter tuning using gridsearch and model assessment. 
+Shuyi Chen built and trained the Xgboost model collaborated with Xinlin Zhang. The entire process is developed in Python including data prepossessing, train/test split, feature extraction(calculation of pairwise euclidean distances), hyperparameter tuning using gridsearch and model assessment. 
+Zidi Hong was in charge of GBM model presented in a R Markdown file which contains data processing, train/test split, feature extraction, hyperparameter tunning and model assessment. 
+Ruo zhou Zhang built and trained the Bagging-SVM model(Our advanced Model) as well as the Bagging-Logistic Model, including data prepossesing/feature extraction, hyperparameter tunning, train/test split and test. He also  wrap up the models in a certain function which can be simply called by the user. 
+Xinlin Zhang built and trained the Xgboost model collaborated with Shuyi Chen. The entire process is developed in Python including data prepossessing, train/test split, feature extraction(calculation of pairwise euclidean distances), hyperparameter tuning using gridsearch and model assessment. 
 
 
 
