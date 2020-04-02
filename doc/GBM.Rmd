@@ -45,7 +45,7 @@ library(caret)
 library(gbm)
 ```
 
-### Step 0 set work directories
+### Step 0: set work directories
 ```{r wkdir, eval=FALSE}
 set.seed(0)
 setwd("~/Documents/GitHub/Spring2020-Project3-group4/doc")
@@ -168,7 +168,7 @@ model_labels = paste("GBM with Shrink =", shrink)
 
 ### cross-validation to choose shrink parameter
 ```{r}
-#source("../lib/tuning_parameter_gbm.R")
+source("../lib/tuning_parameter_gbm.R")
 #if(run.cv){
 #     err_cv_gbm <- matrix(0, nrow = length(shrink), ncol = 2)
 #     for(i in 1:length(shrink)){
@@ -276,10 +276,10 @@ cat("Time for test model=", pred_gbm[[2]][1], "s \n")
 ```
 
 ```{r}
-#source("../lib/feature_test.R")
+#source("../lib/feature.R")
 #tm_feature_te <- NA
 #if(run.feature.train){
-#  tm_feature_te <- system.time(dat_te <- feature(fiducial_pt_list_test, test_idx))
+#  tm_feature_te <- system.time(dat_te <- feature_test(fiducial_pt_list_test, test_idx))
 #}
 
 ```
