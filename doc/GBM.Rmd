@@ -1,7 +1,8 @@
 ---
 title: "GBM model"
 author: "project3 group4"
-output: html_notebook
+output:
+  html_notebook: default
 ---
 
 ```{r message=FALSE}
@@ -31,6 +32,10 @@ if(!require("caret")){
   install.packages("caret")
 }
 
+if(!require("gbm")){
+  install.packages("gbm")
+}
+
 library(R.matlab)
 library(readxl)
 library(dplyr)
@@ -40,7 +45,7 @@ library(caret)
 library(gbm)
 ```
 
-### Step 0 set work directories
+### Step 0: set work directories
 ```{r wkdir, eval=FALSE}
 set.seed(0)
 setwd("~/Documents/GitHub/Spring2020-Project3-group4/doc")
@@ -163,7 +168,7 @@ model_labels = paste("GBM with Shrink =", shrink)
 
 ### cross-validation to choose shrink parameter
 ```{r}
-#source("../lib/tuning_parameter_gbm.R")
+source("../lib/tuning_parameter_gbm.R")
 #if(run.cv){
 #     err_cv_gbm <- matrix(0, nrow = length(shrink), ncol = 2)
 #     for(i in 1:length(shrink)){
@@ -228,9 +233,70 @@ cat("The accuracy for gbm model is", mean(dat_test$emotion_idx==pred.class)*100,
 
 ### Summarize Running Time
 ```{r}
-tm_test_gbm<-system.time(pred_gbm)
+
 cat("Time for constructing training features=", tm_feature_train[1], "s \n")
 cat("Time for constructing testing features=", tm_feature_test[1], "s \n")
 cat("Time for training model=", gbm.fit[[2]][1], "s \n")
-cat("Time for testing model=", tm_test_gbm[1], "s \n")
+cat("Time for test model=", pred_gbm[[2]][1], "s \n")
 ```
+
+
+
+#########Test Set Prediction 
+
+```{r}
+#test_dir <- "../data/test_set_predict/" # This will be modified for different data sets.
+#test_image_dir <- paste(test_dir, "images/", sep="")
+#test_pt_dir <- paste(test_dir,  "points/", sep="")
+#test_label_path <- paste(test_dir, "labels_prediction.csv", sep="") 
+```
+
+```{r}
+#info <- read.csv(test_label_path)
+#test_idx <- info$Index
+```
+
+```{r}
+#n_files_test <- length(list.files(test_image_dir))
+
+#image_list_test <- list()
+#for(i in 1:100){
+#   image_list_test[[i]] <- readImage(paste0(test_image_dir, sprintf("%04d", i), ".jpg"))
+#}
+```
+
+```{r}
+#readMat.matrix.test <- function(index){
+#     return(round(readMat(paste0(test_pt_dir, sprintf("%04d", index), ".mat"))[[1]],0))
+#}
+
+#load fiducial points
+#fiducial_pt_list_test <- lapply(1:n_files_test, readMat.matrix.test)
+
+```
+
+```{r}
+#source("../lib/feature.R")
+#tm_feature_te <- NA
+#if(run.feature.train){
+#  tm_feature_te <- system.time(dat_te <- feature_test(fiducial_pt_list_test, test_idx))
+#}
+
+```
+
+```{r}
+#gbm.fit<-readRDS("../output/gbm.RDS")
+#source("../lib/test_gbm.R")
+#pred_gbm_test<-gbm_test(gbm.fit[[1]],dat_te)
+#pred.class.test<-apply(pred_gbm_test[[1]],1,which.max)
+#write.csv(pred.class.test, file = "pred.class.test.csv")
+#pred.class.test
+```
+
+```{r}
+
+#cat("Time for constructing testing features=", tm_feature_te[1], "s \n")
+#cat("Time for test model=", pred_gbm_test[[2]][1], "s \n")
+
+```
+
