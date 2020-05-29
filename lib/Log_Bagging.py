@@ -5,7 +5,6 @@ Created on Sun Mar 15 22:29:21 2020
 
 @author: ruozhou_zhang
 """
-
 import numpy as np
 import os
 import pandas as pd
@@ -13,7 +12,6 @@ import time
 from scipy.spatial.distance import cdist
 from sklearn.linear_model import LogisticRegression
 from scipy.io import loadmat
-# from sklearn.model_selection import train_test_split, cross_validate, GridSearchCV
 from sklearn.ensemble import BaggingClassifier
 
 
@@ -31,7 +29,6 @@ def get_f(file_dir):
     b = cdist(a, a)
     r = b[np.triu_indices(b.shape[1], 1)].flatten()
     return r
-
 
 def feature_extraction(dir_x):
     fea_start = time.time()
@@ -64,7 +61,6 @@ def BaggingLR(X_path, y_path):
     Train_time = end - start
     print(f'The Time for train is: {Train_time: 0.2f} Seconds')
     return Bag_lr
-    
     
 
 # =============================================================================
