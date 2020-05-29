@@ -9,10 +9,10 @@ Term: Spring 2020
 + Team 04
 + Team members:
 	
-1. Chen, Shuyi 
+1. Zhang, Ruo zhou 
 2. Flack, Jasmin 
 3. Hong, Zidi 
-4. Zhang, Ruo zhou 
+4. Chen, Shuyi  
 5. Zhang, Xinlin 
 
 + Project summary: In this project, we created a classification engine for facial emotion recognition. The baseline model uses gradient boosting machine (gbm) with the accuracy of 42.4%. We have also evaluated other machine learning models(XGboost, Bagging-log,bagging-SVM) and chose the best one (bagging-SVM) based on predictive performance and computation efficiency. Our final advanced model uses bagging-SVM with PCA which enhances the accuracy rate by 52.56%.
@@ -40,9 +40,9 @@ Steps:
 
 All team members contributed equally in all stages of this project. All team members approve our work presented in this GitHub repository including this contributions statement. 
 
++ Ruo zhou Zhang built and trained the Bagging-SVM model(Our advanced Model) as well as the Bagging-Logistic Model, including data prepossesing/feature extraction, hyperparameter tunning, train/test split and test. He also  wrap up the models in a certain function which can be simply called by the user.
 + Shuyi Chen built and trained the Xgboost model collaborated with Xinlin Zhang. The entire process is developed in Python including data prepossessing, train/test split, feature extraction(calculation of pairwise euclidean distances), hyperparameter tuning using gridsearch and model assessment. 
 + Zidi Hong was in charge of GBM model presented in a R Markdown file which contains data processing, train/test split, feature extraction, hyperparameter tunning and model assessment. 
-+ Ruo zhou Zhang built and trained the Bagging-SVM model(Our advanced Model) as well as the Bagging-Logistic Model, including data prepossesing/feature extraction, hyperparameter tunning, train/test split and test. He also  wrap up the models in a certain function which can be simply called by the user. 
 + Xinlin Zhang built and trained the Xgboost model collaborated with Shuyi Chen. The entire process is developed in Python including data prepossessing, train/test split, feature extraction(calculation of pairwise euclidean distances), hyperparameter tuning using gridsearch and model assessment. 
 + Jasmin Flack completed the slides and presentation of the project.
 
